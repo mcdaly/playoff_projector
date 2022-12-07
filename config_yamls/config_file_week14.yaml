@@ -1,0 +1,23 @@
+teams:
+  # Team Name followed by Wins, Losses, Ties, Total Points Scored, and "E" or "W" for Conference
+  Olbert: [8, 5, 0, 1540, "E"]
+  Quinn: [7, 6, 0, 1471, "W"]
+  Dales: [7, 6, 0, 1403, "E"]
+  Baker: [8, 5, 0, 1501, "E"]
+  Cakes: [6, 7, 0, 1375, "W"]
+  Joe: [5, 8, 0, 1403, "W"]
+  Evan: [7, 6, 0, 1590, "E"]
+  Devon: [6, 7, 0, 1305, "E"]
+  Sam: [6, 7, 0, 1566, "W"]
+  Donny: [8, 5, 0, 1582, "W"]
+  Amrit: [3, 10, 0, 1203, "W"]
+  Kyle: [7, 6, 0, 1596, "E"]
+
+schedule:
+  # Remaining matchups to review
+  week_14: ["Evan vs Cakes",
+            "Dales vs Quinn",
+            "Olbert vs Donny",
+            "Baker vs Joe",
+            "Kyle vs Amrit",
+            "Devon vs Sam"]
