@@ -14,7 +14,7 @@ def run_playoff_projections(config_filepath: str):
 
     :param config_filepath: Yaml file containing the team records and the remaining schedule to analyze
     """
-    with open(config_filepath, 'r') as file:
+    with open(config_filepath, "r") as file:
         configs = yaml.safe_load(file)
     teams = {}
     for cur_team in configs["teams"]:
@@ -27,6 +27,6 @@ def run_playoff_projections(config_filepath: str):
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+if __name__ == "__main__":
     config_file = "config_yamls/config_file_week14.yaml"
     run_playoff_projections(config_file)

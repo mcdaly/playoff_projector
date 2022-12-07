@@ -36,7 +36,9 @@ class team:
         self.update_win_percentage()
 
     def update_win_percentage(self):
-        self.win_percentage = (self.wins + self.ties * 1/2) / (self.wins + self.ties + self.losses)
+        self.win_percentage = (self.wins + self.ties * 1 / 2) / (
+            self.wins + self.ties + self.losses
+        )
 
     def designate_for_playoffs(self):
         self.playoff_team = True

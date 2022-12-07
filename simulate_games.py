@@ -3,7 +3,9 @@ from team import team
 from loguru import logger
 
 
-def simulate_remaining_weeks(schedule: dict[str, list], teams: dict[str, team], outcomes: list[str]) -> list[dict[str, team]]:
+def simulate_remaining_weeks(
+    schedule: dict[str, list], teams: dict[str, team], outcomes: list[str]
+) -> list[dict[str, team]]:
     """
     Run the weeks in the remaining schedule
     :param schedule: Dictionary of weeks and remaining games in each of those weeks
@@ -14,11 +16,15 @@ def simulate_remaining_weeks(schedule: dict[str, list], teams: dict[str, team], 
     cur_teams = deepcopy(teams)
     final_team_results = []
     for cur_week in schedule:
-        final_team_results = simulate_remaining_games(schedule[cur_week], cur_teams, outcomes)
+        final_team_results = simulate_remaining_games(
+            schedule[cur_week], cur_teams, outcomes
+        )
     return final_team_results
 
 
-def simulate_remaining_games(games_this_week: list, teams: dict[str, team], outcomes: list[str]) -> list[dict[str, team]]:
+def simulate_remaining_games(
+    games_this_week: list, teams: dict[str, team], outcomes: list[str]
+) -> list[dict[str, team]]:
     """
     Run the games for the current week then remove the game from the
     weekly games and recursively pass the games and teams into itself
@@ -52,7 +58,9 @@ def simulate_remaining_games(games_this_week: list, teams: dict[str, team], outc
         remaining_games_this_week = games_this_week[1:]
         if len(remaining_games_this_week) > 0:
             # If we have at least 1 game to analyze, simulate the game
-            final_team_results.extend(simulate_remaining_games(remaining_games_this_week, cur_teams, outcomes))
+            final_team_results.extend(
+                simulate_remaining_games(remaining_games_this_week, cur_teams, outcomes)
+            )
         else:
             # If no more games remain to be simulated, we want to save off the current records
             final_team_results.extend([cur_teams])
