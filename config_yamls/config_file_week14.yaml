@@ -15,9 +15,10 @@ teams:
 
 schedule:
   # Remaining matchups to review
-  week_14: ["Evan vs Cakes",
-            "Dales vs Quinn",
-            "Olbert vs Donny",
-            "Baker vs Joe",
-            "Kyle vs Amrit",
-            "Devon vs Sam"]
+  week_14:
+    - "Evan vs Cakes"
+    - "Dales vs Quinn"
+    - "Olbert vs Donny"
+    - "Baker vs Joe"
+    - "Kyle vs Amrit"
+    - "Devon vs Sam"

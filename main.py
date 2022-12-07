@@ -31,5 +31,5 @@ def run_playoff_projections(config_file):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    config_file = "/config_yamls/config_file_week14.yaml"
+    config_file = "config_yamls/config_file_week14.yaml"
     run_playoff_projections(config_file)
