@@ -1,7 +1,12 @@
 from loguru import logger
 from team import team
 
+
 def analyze_records(possible_records: list[dict[str, team]]):
+    """
+    Analyze the records of each team to determine how they can make the playoffs
+    :param possible_records: List of team records for each possible scenario
+    """
     for cur_records in possible_records:
         select_playoff_teams(cur_records)
 
@@ -11,10 +16,24 @@ def analyze_records(possible_records: list[dict[str, team]]):
         playoff_results = sum([record[cur_team].playoff_team for record in possible_records])
         tiebreaker_results = sum([record[cur_team].tiebreaker_team for record in possible_records])
         team_chances[cur_team] = [playoff_results, tiebreaker_results]
+    logger.info(f"Chances for each team to make the playoffs:\n{team_chances}")
+
+
+def how_can_this_team_make_the_playoffs(all_records: list[dict[str, team]]):
+    """
+    Analyze each team individually and what happens in the times when they make the playoffs
+
+    :return:
+    """
     print(1)
 
 
 def select_playoff_teams(records: dict[str, team]):
+    """
+
+    :param records:
+    :return:
+    """
     # # East Winner
     # find_top_in_each_conference(records, "E")
     # # West Winner
@@ -34,6 +53,12 @@ def find_any_tiebreaker_teams(records):
 
 
 def find_top_in_each_conference(records: dict[str, team], conference: str):
+    """
+    Find the top team in each conference and designate them for the playoffs
+    :param records:
+    :param conference:
+    :return:
+    """
     teams = [team for team in records.values() if team.conference is conference]
     teams.sort()
     teams[-1].designate_for_playoffs()

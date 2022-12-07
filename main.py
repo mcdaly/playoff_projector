@@ -1,7 +1,5 @@
-import numpy as np
 import yaml
 from team import team
-from loguru import logger
 
 from simulate_games import simulate_remaining_weeks
 from analyze_records import analyze_records
@@ -9,14 +7,14 @@ from analyze_records import analyze_records
 # OUTCOMES = ["Team1 wins", "Team2 wins", "Tie"]
 OUTCOMES = ["Team1 wins", "Team2 wins"]
 
-def run_playoff_projections(config_file):
+
+def run_playoff_projections(config_filepath: str):
     """
     Go through all remaining games and provide a detailed list of what is needed to make the playoffs
 
-    :param config_file:
-    :return:
+    :param config_filepath: Yaml file containing the team records and the remaining schedule to analyze
     """
-    with open(config_file, 'r') as file:
+    with open(config_filepath, 'r') as file:
         configs = yaml.safe_load(file)
     teams = {}
     for cur_team in configs["teams"]:
@@ -26,7 +24,6 @@ def run_playoff_projections(config_file):
 
     # Analyze possible records
     analyze_records(record_projections)
-    print(1)
 
 
 # Press the green button in the gutter to run the script.
