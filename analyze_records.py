@@ -48,7 +48,7 @@ def how_can_this_team_make_the_playoffs(
 
     # Now the finer cases...
 
-    print(1)
+    #print(1)
 
 
 def select_playoff_teams(records: dict[str, team]):
